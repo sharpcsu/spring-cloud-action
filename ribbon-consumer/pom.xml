@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
     
     <groupId>com.csu</groupId>
-    <artifactId>eureka-client</artifactId>
+    <artifactId>ribbon-consumer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     
-    <name>eureka-client</name>
-    <description>服务提供者</description>
+    <name>ribbon-consumer</name>
+    <description>服务消费者</description>
     
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -32,32 +32,23 @@
         </dependency>
         
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-    </dependency>
+        </dependency>
     
-    <dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>slf4j-api</artifactId>
-                    <groupId>org.slf4j</groupId>
-                </exclusion>
-            </exclusions>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-ribbon</artifactId>
         </dependency>
     </dependencies>
     
