@@ -2,12 +2,14 @@ package com.csu.consumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-@EnableDiscoveryClient
+@EnableCircuitBreaker //启用断路器
+@EnableDiscoveryClient //启用客户端
 @SpringBootApplication
 public class RibbonConsumerApplication {
     
