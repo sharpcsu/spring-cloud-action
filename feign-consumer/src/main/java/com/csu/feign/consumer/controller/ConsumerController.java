@@ -1,6 +1,7 @@
 package com.csu.feign.consumer.controller;
 
 import com.csu.feign.consumer.service.HelloService;
+import com.csu.feign.consumer.service.RefactorHelloService;
 import com.csu.feign.consumer.web.User;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,9 @@ public class ConsumerController {
     @Resource
     private HelloService helloService;
     
+    @Resource
+    private RefactorHelloService refactorHelloService;
+    
     @RequestMapping(value = "/feign-consumer", method = RequestMethod.GET)
     public String helloConsumer() {
         return helloService.hello();
@@ -34,6 +38,12 @@ public class ConsumerController {
         return sb.toString();
     }
     
-    
+    @RequestMapping(value = "/feign-consumer3", method = RequestMethod.GET)
+    public String helloConsumer3() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(refactorHelloService.hello("MIMI")).append("\n");
+        sb.append(refactorHelloService.hello("MIMI", 20)).append("\n");
+        return sb.toString();
+    }
     
 }
