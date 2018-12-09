@@ -10,15 +10,13 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.csu</groupId>
-    <artifactId>config-server</artifactId>
+    <artifactId>stream-hello</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>config-server</name>
-    <description>Spring Cloud Config 分布式配置中心服务端</description>
+    <name>stream-hello</name>
+    <description>Spring Cloud Stream 消息驱动的微服务入门</description>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
     </properties>
 
@@ -53,11 +51,17 @@
     
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
+            <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
+            <artifactId>spring-cloud-stream-rxjava</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.4</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
     
